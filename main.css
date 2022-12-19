@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+body{
+    margin: 0;
+    margin: auto;
+    font-family: 'Noto Sans KR', sans-serif;
+
+    background-color: rgb(227, 243, 250);
+    
+    background-image: linear-gradient(
+        rgba(182, 208, 255, 0.7),
+        rgba(255, 255, 255, 0.7)
+      ), url('https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-winter-snow-mountain-snowing-background-backgroundsnow-backgroundhand-painted-image_77197.jpg');
+    background-size : cover;
+    height: 100vh;
+    width: 100vw;
+}   
+
+/* 메인 Header */
+
+#header{
+    background-color: rgb(255, 255, 255);
+
+    height: 80px;
+    text-align: center;
+    padding-top: 40px;
+    width: 100%;
+
+    margin-bottom: 25px;
+}
+
+#header > p{
+    font-weight: 700;
+    font-size: 30px;
+    margin-top: -5px;
+}
+
+/* 메인 메뉴 */
+
+#main_sq{
+    background-color: rgba(255, 255, 255, 0.85);
+
+    margin: auto;
+    width: 850px;
+    height: 800px;
+
+    border-radius: 20px 20px 20px 20px;
+
+    box-shadow: 10px 10px 10px rgb(160, 160, 160);
+}
+
+#main_sq > #sq_menu1{
+    background-color: white;
+    width: 150px;
+    height: 200px;
+
+    margin-left: 40px;
+    float: left;
+    border-radius: 25px 25px 25px 25px;
+
+    border: 2px solid rgb(184, 184, 184);
+}
+
+#main_sq > #sq_menu2{
+    background-color: white;
+    width: 150px;
+    height: 200px;
+
+    float: left;
+    margin-left: 50px;
+
+    border-radius: 25px 25px 25px 25px;
+
+    border: 2px solid rgb(184, 184, 184);
+}
+
+#main_sq > #sq_menu1 > #sq_menu1_img{
+    background-color: white;
+    width: 100px;
+    height: 100px;
+
+    margin: auto;
+    margin-top: 30px;
+
+    border: 1px solid rgb(184, 184, 184);
+}
+
+#main_sq > #sq_menu2 > #sq_menu1_img{
+    background-color: white;
+    width: 100px;
+    height: 100px;
+
+    margin: auto;
+    margin-top: 30px;
+
+    border: 1px solid rgb(184, 184, 184);
+}
+
+
+
+
+
+
+
+
