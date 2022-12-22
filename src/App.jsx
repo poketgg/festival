@@ -170,11 +170,13 @@ const PayQRImg = styled.img.attrs({
 
 const PayCompleteButton = styled.div`
   width: 100%;
-  height: 10%;
+  height: 50%;
   font-weight: 900;
   background-color: #D9DCE8;
-  padding-top: 8%;
   font-size: 600%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 function App() {
@@ -286,14 +288,18 @@ function App() {
                   </PayDivP>
               </PayDivPDiv>
               
-              <PayDivPDiv height='5%'>
+              <PayDivPDiv height='50%'>
                   <PayDivP weight='500' size='300%'>
                     결제가 완료되면, 아래 버튼을 눌러주세요.
+                  </PayDivP>
+                  <PayDivP weight='500' size='300%'>
+                    결제 여부는 관리자가 실시간으로 확인합니다.
                   </PayDivP>
               </PayDivPDiv>
               <PayCompleteButton onClick={()=> {setM1Count(0);setM2Count(0);setM3Count(0);setM4Count(0);}}>
                 결제 완료
               </PayCompleteButton>
+              
             </PayDiv>
           </Bodyblackout>
         }
