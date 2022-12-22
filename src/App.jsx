@@ -230,7 +230,7 @@ function App() {
     const resCount = () => {props.setCount(0)}
     return (
       <> {props.count ? 
-        props.type === 'edit' ? <CountFontDiv ><p onClick={resCount}>x</p><p>&nbsp;&nbsp;</p><p onClick={decCount}>-</p>{props.name}: {props.count}개<p onClick={incCount}>+</p></CountFontDiv>
+        props.type === 'edit' ? <CountFontDiv ><span role="img" aria-label="x" onClick={resCount}>❌</span><p>&nbsp;&nbsp;</p><span role="img" aria-label='-' onClick={decCount}>➖</span><p>&nbsp;&nbsp;</p>{props.name}: {props.count}개<p>&nbsp;&nbsp;</p><span role="img" aria-label='+' onClick={incCount}>➕</span></CountFontDiv>
         : <CountFontShowDiv size='100%'><p>{props.name}: {props.count}개</p></CountFontShowDiv>
         : <></>}</>
     )
