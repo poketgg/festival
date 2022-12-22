@@ -12,3 +12,6 @@ yarn dev
 cd festival
 yarn run deploy
 ```
+---
+### todo
+- [ ] css 최적화
