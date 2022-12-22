@@ -7,3 +7,8 @@ cd festival
 yarn
 yarn dev
 ```
+### Build&Deploy to Github Pages
+```
+cd festival
+yarn run deploy
+```
