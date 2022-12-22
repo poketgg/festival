@@ -3,6 +3,7 @@ import styled from "styled-components";
 import './App.css';
 import payQRSrc from "./assets/img/payQR.jpg";
 
+
 const Bodyblackout = styled.div`
   width: 110%;
   height: 110%;
@@ -20,10 +21,10 @@ const Bodyblackout = styled.div`
 const Header = styled.div`
   background-color: rgb(255, 255, 255);
   font-weight: 900;
-  font-size: 300%;
-  height: 80px;
+  font-size: 100%;
+  height: 5%;
   text-align: center; 
-  padding-top: 40px;
+  padding-top: 2.5%;
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   margin-bottom: 25px;
@@ -31,20 +32,21 @@ const Header = styled.div`
 const Board = styled.div`
   background-color: rgba(255, 255, 255, 0.85);
   display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  display-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
   width: 100%;
-  height: 70%;
-
+  height: 60%;
+  margin-bottom: 1%;
   border-radius: 20px 20px 0px 0px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 `
 const Menu = styled.div`
   background-color: white;
-  width: 90%;
-  height: 95%;
-  margin: 1% 3%;
+  width: 70%;
+  aspect-ratio: 1/1.25;
+  margin: 1% auto;
   float: left;
   border-radius: 25px 25px 25px 25px;
   display: flex;
@@ -54,7 +56,7 @@ const Menu = styled.div`
 `
 const MenuImg = styled.img`
   background-color: white;
-  width: 80%;
+  width: 40%;
   aspect-ratio: 1/1;
 
   margin: 5% auto 5% auto;
@@ -63,12 +65,13 @@ const MenuImg = styled.img`
 `
 const MenuName = styled.p`
   font-weight: 700;
-  font-size: 350%;
+  font-size: 100%;
+  
   margin: 10% auto 5% auto;
 `
 const MenuPrice = styled.p`
   font-weight: 500;
-  font-size: 300%;
+  font-size: 100%;
   margin-bottom: 1%;
 `
 
@@ -76,33 +79,52 @@ const PaySectDiv = styled.div`
   font-weight: 700;
   background-color: white;
   width: 100%;
-  height: 23%;
+  height: 25%;
   border-radius: 0px 0px 25px 25px;
   display: flex;
   flex-direction: row;
+  align-items: baseline;
   border: 2px solid rgb(184, 184, 184);
   
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 `
 const CountDiv = styled.div`
   font-weight: 700;
+  font-size: 100%;
   display: flex;
-  
-  flex-direction: row;
-  font-size: 300%;
   
 `
 const CountFontDiv = styled.div`
-  margin: 9% 3% 1% 3%;
+  margin-top: 1%;
   font-weight: 900;
-  font-size: ${props => props.size || '100%'}
+  height: 80%;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  
+  flex-direction: row;
+  font-size: ${props => props.size && '100%'}
+`
+const CountFontShowDiv = styled.div`
+  font-weight: 900;
+  height: 80%;
+  font-size: ${props => props.size && '100%'}
+`
+const CountsShowDiv = styled.div`
+  font-weight: 500;
+  width: 100%;
+  height: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 const CountsDiv = styled.div`
   font-weight: 500;
   width: 40%;
-  height: 10%;
+  height: 20%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 1% auto 0 3%;
 `
 const ResetP = styled.p`
@@ -115,47 +137,58 @@ const ResetP = styled.p`
 `
 const PrePayDiv = styled.div`
   width: 60%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  align-items:flex-end;
 `
 const TotalPrice = styled.p`
   font-weight: 900;
-  font-size: 600%;
+  font-size: 200%;
 ` 
 const TotalPriceDiv = styled.div`
-  margin: 20% 0 10% %;
+  margin: 0 20% 0;
 `
 const PayButtonDiv = styled.div`
   background-color: #D9DCE8;
-  weight: 40%;
-  height: 20%;
-  margin: 10% 0 0 30%;
+  width: 70%;
+  height: 120%;
+  border-radius: 0 0 25px 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+`
+const PayButtonTextDiv = styled.div`
+  text-align: center;
   font-weight: 800;
-  font-size: 500%;
-  padding: 100px 0;
+  font-size: 150%;
+  height: 10%;
 `
 const PayDiv = styled.div`
   width: 70%;
   height: 90%;
-  position: relative;
   display: flex;
+  position: relative;
   margin: 5% 13% 0 5%;
   background-color: white;
   text-align: center;
+  justify-content: center;
   border: 2px solid rgb(184, 184, 184);
   flex-direction: column;
   z-index: 500;
 `
+const PayInfoDiv = styled.div`
+  width: 100%;
+  margin-top: 15%;
+`
 const PayDivP = styled.p`
   font-size: ${props => props.size};
   font-weight: ${props => props.weight};
+  margin-top: 0;
 `
-const PayDivPDiv = styled.div`
-  width: 100%;
-  text-align: center;
-  height: ${props => props.height}
-  margin-bottom: 1%;
-`
+
 
 const PayQRImgDiv = styled.div`
   width: 100%;
@@ -170,13 +203,18 @@ const PayQRImg = styled.img.attrs({
 
 const PayCompleteButton = styled.div`
   width: 100%;
-  height: 50%;
+  height: 10%;
+  margin-top: 20%;
   font-weight: 900;
   background-color: #D9DCE8;
-  font-size: 600%;
+  font-size: 150%;
+  position: absolute;
+  bottom: 2%;
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  box-sizing: border-box
 `
 
 function App() {
@@ -192,8 +230,8 @@ function App() {
     const resCount = () => {props.setCount(0)}
     return (
       <> {props.count ? 
-        props.type === 'edit' ? <CountDiv><p onClick={resCount}>x</p><p>&nbsp;&nbsp;</p><p onClick={decCount}>-</p><CountFontDiv>{props.name}: {props.count}개</CountFontDiv><p onClick={incCount}>+</p></CountDiv> 
-        : <CountFontDiv size='400%'>{props.name}: {props.count}개</CountFontDiv>
+        props.type === 'edit' ? <CountFontDiv ><p onClick={resCount}>x</p><p>&nbsp;&nbsp;</p><p onClick={decCount}>-</p>{props.name}: {props.count}개<p onClick={incCount}>+</p></CountFontDiv>
+        : <CountFontShowDiv size='100%'><p>{props.name}: {props.count}개</p></CountFontShowDiv>
         : <></>}</>
     )
   }
@@ -237,65 +275,58 @@ function App() {
     </Board>
     <PaySectDiv>
       <CountsDiv>
-      <ShowCount type='edit' name='직접갈기' count={m1Count} setCount={setM1Count}/>
-      <ShowCount type='edit' name='갈아드림' count={m2Count} setCount={setM2Count}/>
-      <ShowCount type='edit' name='직접(토핑2배)' count={m3Count} setCount={setM3Count}/>
-      <ShowCount type='edit' name='갈아(토핑2배)' count={m4Count} setCount={setM4Count}/>
+        <ShowCount type='edit' name='직접갈기' count={m1Count} setCount={setM1Count}/>
+        <ShowCount type='edit' name='갈아드림' count={m2Count} setCount={setM2Count}/>
+        <ShowCount type='edit' name='직접(토핑2배)' count={m3Count} setCount={setM3Count}/>
+        <ShowCount type='edit' name='갈아(토핑2배)' count={m4Count} setCount={setM4Count}/>
       </CountsDiv>
       <PrePayDiv>
         <TotalPriceDiv>
           <ShowTotalPrice m1Count={m1Count} m2Count={m2Count} m3Count={m3Count} m4Count={m4Count}></ShowTotalPrice>
         </TotalPriceDiv>
         <PayButtonDiv onClick={() => {setIsPayDivVisible(true);}}>
-          결제하기
+          <PayButtonTextDiv>
+            결제하기
+          </PayButtonTextDiv>
         </PayButtonDiv>
 
         {isPayDivVisible && 
           <Bodyblackout onClick={() => {setIsPayDivVisible(false);}}>
             <PayDiv>
-              <ShowCount name='직접갈기' count={m1Count} setCount={setM1Count}/>
-              <ShowCount name='갈아드림' count={m2Count} setCount={setM2Count}/>
-              <ShowCount name='직접(토핑2배)' count={m3Count} setCount={setM3Count}/>
-              <ShowCount name='갈아(토핑2배)' count={m4Count} setCount={setM4Count}/>
-              
-              <PayDivPDiv height='5%'>
+              <CountsShowDiv>
+                <ShowCount name='직접갈기' count={m1Count} setCount={setM1Count}/>
+                <ShowCount name='갈아드림' count={m2Count} setCount={setM2Count}/>
+                <ShowCount name='직접(토핑2배)' count={m3Count} setCount={setM3Count}/>
+                <ShowCount name='갈아(토핑2배)' count={m4Count} setCount={setM4Count}/>
+              </CountsShowDiv> 
+              <PayInfoDiv>
                 <ShowTotalPrice m1Count={m1Count} m2Count={m2Count} m3Count={m3Count} m4Count={m4Count}></ShowTotalPrice>
-              </PayDivPDiv>
-              <PayDivPDiv height='5%'>
-                <PayDivP weight='900' size='600%'>
+                <PayDivP weight='900' size='200%'>
                   결제 방법
                 </PayDivP>
-              </PayDivPDiv>
-              <PayDivPDiv height='5%'>
-                  <PayDivP weight='800' size='400%'>
+                  <PayDivP weight='800' size='150%'>
                     QR로 결제
                   </PayDivP>
-                </PayDivPDiv>
               <PayQRImgDiv>
                 <PayQRImg />
               </PayQRImgDiv>
-              <PayDivPDiv height='20%'>
-                  <PayDivP weight='800' size='250%'>
+                  <PayDivP weight='800' size='100%'>
                     혹은
                   </PayDivP>
-              </PayDivPDiv>
-              <PayDivPDiv height='5%'>
-                  <PayDivP weight='800' size='400%'>
+                  <PayDivP weight='800' size='150%'>
                     계좌 송금
                   </PayDivP>
-                  <PayDivP weight='400' size='300%'>
+                  <PayDivP weight='400' size='100%'>
                   국민 48460204278030 (배세웅)
                   </PayDivP>
-              </PayDivPDiv>
               
-              <PayDivPDiv height='50%'>
-                  <PayDivP weight='500' size='300%'>
+                  <PayDivP weight='500' size='100%'>
                     결제가 완료되면, 아래 버튼을 눌러주세요.
                   </PayDivP>
-                  <PayDivP weight='500' size='300%'>
+                  <PayDivP weight='500' size='100%'>
                     결제 여부는 관리자가 실시간으로 확인합니다.
                   </PayDivP>
-              </PayDivPDiv>
+              </PayInfoDiv>
               <PayCompleteButton onClick={()=> {setM1Count(0);setM2Count(0);setM3Count(0);setM4Count(0);}}>
                 결제 완료
               </PayCompleteButton>
