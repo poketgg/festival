@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
+import { app, db } from './firebase';
+import { addDoc, Timestamp, collection } from 'firebase/firestore/lite';
 import styled from "styled-components";
 import './App.css';
 import payQRSrc from "./assets/img/payQR.jpg";
@@ -237,12 +239,34 @@ function App() {
   }
 
   const ShowTotalPrice = (props) => {
-    const totPrice = props.m1Count * 1000 + props.m2Count * 2000 + props.m3Count * 3000 + props.m4Count * 4000 
+    const totPrice = props.m1Count * 3000 + props.m2Count * 4000 + props.m3Count * 4000 + props.m4Count * 5000 
     return (
       <TotalPrice>₩ {totPrice.toLocaleString()}</TotalPrice>
     )
   }
 
+
+  const completePay = async (props) => {
+    try {
+      const totPrice = props.m1Count * 3000 + props.m2Count * 4000 + props.m3Count * 4000 + props.m4Count * 5000  
+      const receiptRef = await addDoc(collection(db, "Receipts"), {
+        counts: { m1Count: props.m1Count,
+        m2Count: props.m2Count,
+        m3Count: props.m3Count,
+        m4Count: props.m4Count,
+        },
+        totPrice: totPrice,
+        timestamp: Timestamp.fromDate(new Date().getTime()),
+      });
+      console.log("Success, ID: ", receiptRef.id);
+    } catch (e) {
+      console.error("Error adding Receipt: ", e);
+    }
+    setM1Count(0);
+    setM2Count(0);
+    setM3Count(0);
+    setM4Count(0);
+  }
   
   return (
     <>
@@ -327,7 +351,7 @@ function App() {
                     결제 여부는 관리자가 실시간으로 확인합니다.
                   </PayDivP>
               </PayInfoDiv>
-              <PayCompleteButton onClick={()=> {setM1Count(0);setM2Count(0);setM3Count(0);setM4Count(0);}}>
+              <PayCompleteButton onClick={() => {completePay(setM1Count, setM2Count, setM3Count, setM4Count, m1Count, m2Count, m3Count, m4Count)}}>
                 결제 완료
               </PayCompleteButton>
               
