@@ -237,7 +237,7 @@ function App() {
   }
 
   const ShowTotalPrice = (props) => {
-    const totPrice = props.m1Count * 1000 + props.m2Count * 2000 + props.m3Count * 3000 + props.m4Count * 4000 
+    const totPrice = props.m1Count * 3000 + props.m2Count * 4000 + props.m3Count * 4000 + props.m4Count * 5000 
     return (
       <TotalPrice>₩ {totPrice.toLocaleString()}</TotalPrice>
     )
