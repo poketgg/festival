@@ -164,7 +164,7 @@ Error generating stack: `+o.message+`
   font-weight: 900;
   font-size: 200%;
 `,k0=ee.div`
-  margin: 0 15% 0;
+  margin: 0 20% 0;
 `,x0=ee.div`
   background-color: #D9DCE8;
   width: 70%;
@@ -194,7 +194,7 @@ Error generating stack: `+o.message+`
   z-index: 500;
 `,_0=ee.div`
   width: 100%;
-  margin-top: 15%;
+  margin-top: 10%;
 `,Xt=ee.p`
   font-size: ${e=>e.size};
   font-weight: ${e=>e.weight};
