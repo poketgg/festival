@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import styled from "styled-components";
 import './App.css';
 import payQRSrc from "./assets/img/payQR.jpg";
+
+import defaultSrc from "./assets/img/default.png";
 import menuOneSrc from "./assets/img/image-removebg-preview.png";
 import menuTwoSrc from "./assets/img/ice.jpg";
 import menuThreeSrc from "./assets/img/fruit.jpg";
