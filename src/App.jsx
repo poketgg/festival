@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react'
 import styled from "styled-components";
 import './App.css';
 import payQRSrc from "./assets/img/payQR.jpg";
+import menuOneSrc from "./assets/img/image-removebg-preview.png";
+import menuTwoSrc from "./assets/img/ice.jpg";
+import menuThreeSrc from "./assets/img/fruit.jpg";
+import menuFourSrc from "./assets/img/fruit_ice.png";
 
 
 const Bodyblackout = styled.div`
@@ -200,6 +204,17 @@ const PayQRImg = styled.img.attrs({
   height: 100%;
   aspect-ratio: 1/1;
 `
+const MenuImg = styled.img.attrs(props => ({
+src: props.src || defaultSrc,
+}))`
+  background-color: white;
+  width: 40%;
+  aspect-ratio: 1/1;
+
+  margin: 5% auto 5% auto;
+
+  border: 1px solid rgb(184, 184, 184);
+`
 
 const PayCompleteButton = styled.div`
   width: 100%;
@@ -252,7 +267,7 @@ function App() {
 
     <Board>
         <Menu onClick={() => setM1Count(m1Count + 1)}>
-          <MenuImg />
+          <MenuImg src=menuOneSrc />
           <MenuName>직접갈기</MenuName>
           <MenuPrice>₩3,000</MenuPrice>
         </Menu>
