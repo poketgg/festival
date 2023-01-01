@@ -3,7 +3,7 @@ import styled from "styled-components";
 import './App.css';
 import payQRSrc from "./assets/img/payQR.jpg";
 
-import defaultSrc from "./assets/img/default.png";
+// import defaultSrc from "./assets/img/default.png";
 import menuOneSrc from "./assets/img/image-removebg-preview.png";
 import menuTwoSrc from "./assets/img/ice.jpg";
 import menuThreeSrc from "./assets/img/fruit.jpg";
@@ -60,15 +60,15 @@ const Menu = styled.div`
   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
   border: 2px solid rgb(184, 184, 184);
 `
-const MenuImg = styled.img`
-  background-color: white;
-  width: 40%;
-  aspect-ratio: 1/1;
+// const MenuImg = styled.img`
+//   background-color: white;
+//   width: 40%;
+//   aspect-ratio: 1/1;
 
-  margin: 5% auto 5% auto;
+//   margin: 5% auto 5% auto;
 
-  border: 1px solid rgb(184, 184, 184);
-`
+//   border: 1px solid rgb(184, 184, 184);
+// `
 const MenuName = styled.p`
   font-weight: 700;
   font-size: 100%;
@@ -187,7 +187,7 @@ const PayDiv = styled.div`
 `
 const PayInfoDiv = styled.div`
   width: 100%;
-  margin-top: 15%;
+  margin-top: 10%;
 `
 const PayDivP = styled.p`
   font-size: ${props => props.size};
@@ -207,7 +207,7 @@ const PayQRImg = styled.img.attrs({
   aspect-ratio: 1/1;
 `
 const MenuImg = styled.img.attrs(props => ({
-src: props.src || defaultSrc,
+src: props.src //|| defaultSrc,
 }))`
   background-color: white;
   width: 40%;
@@ -254,7 +254,7 @@ function App() {
   }
 
   const ShowTotalPrice = (props) => {
-    const totPrice = props.m1Count * 3000 + props.m2Count * 4000 + props.m3Count * 4000 + props.m4Count * 5000
+    const totPrice = props.m1Count * 1000 + props.m2Count * 2500 + props.m3Count * 2000 + props.m4Count * 3500
     return (
       <TotalPrice>₩ {totPrice.toLocaleString()}</TotalPrice>
     )
@@ -264,29 +264,29 @@ function App() {
   return (
     <>
       <Header>
-        과일빙수~
+        열심히 일한 자 먹지도 말라
       </Header> 
 
     <Board>
         <Menu onClick={() => setM1Count(m1Count + 1)}>
-          <MenuImg src=menuOneSrc />
+          <MenuImg src={menuOneSrc} />
           <MenuName>직접갈기</MenuName>
-          <MenuPrice>₩3,000</MenuPrice>
+          <MenuPrice>₩1,000</MenuPrice>
         </Menu>
         <Menu onClick={() => setM2Count(m2Count + 1)}>
-          <MenuImg />
+          <MenuImg src={menuTwoSrc} />
           <MenuName>갈아드림</MenuName>
-          <MenuPrice>₩4,000</MenuPrice>
+          <MenuPrice>₩2,500</MenuPrice>
         </Menu>
         <Menu onClick={() => setM3Count(m3Count + 1)}>
-          <MenuImg />
-          <MenuName>직접갈기(토핑 2배)</MenuName>
-          <MenuPrice>₩4,000</MenuPrice>
+          <MenuImg src={menuThreeSrc} />
+          <MenuName>직접갈기(토핑 추가)</MenuName>
+          <MenuPrice>₩2,000</MenuPrice>
         </Menu>
         <Menu onClick={() => setM4Count(m4Count + 1)}> 
-          <MenuImg />
-          <MenuName>갈아드림(토핑 2배)</MenuName>
-          <MenuPrice>₩5,000</MenuPrice>
+          <MenuImg src={menuFourSrc} />
+          <MenuName>갈아드림(토핑 추가)</MenuName>
+          <MenuPrice>₩3,500</MenuPrice>
         </Menu>
         
     </Board>
